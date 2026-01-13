@@ -3,48 +3,84 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Simple Storage | Smart Contract</title>
-    
-  <script src="https://kit.fontawesome.com/8e34b61e55.js" crossorigin="anonymous"></script>
-    
+    <title>Farm Game with GLD coins</title>
+
+    <script
+      src="https://kit.fontawesome.com/8e34b61e55.js"
+      crossorigin="anonymous"
+    ></script>
+
     <script type="module" src="ledgerGameScript.js"></script>
-    <link rel="stylesheet" href="style2.css" />
+    <link rel="stylesheet" href="style3.css" />
   </head>
   <body>
-    <div id="header">
-      <div class="container">
-        <nav>
-          <img src="images/logo.png" class="logo" />
-          <ul id="sidemenu">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="#connect">Connect Wallet</a></li>
-            <li><a href="#create_contract">Create Contract</a></li>
-            <li><a href="#store">Store Value</a></li>
-            <li><a href="#display">Display Value</a></li>
+    <div class="app">
+      <header class="topbar">
+        <div class="title"> Ledger Farm</div>
 
-          </ul>
-
-          <!-- <i class="fa-solid fa-list" id="crossMenu" onclick="openmenu()"></i> -->
-        </nav>
-        <div class="header-text">
-          <h1>
-            <span style="color: #ff004f">Simple Storage </span> Smart Contract
-          </h1>
+        <div class="wallet-panel">
+          <button id="connectBtn" onclick="connectWallet()">
+            Connect Wallet
+          </button>
+          <div class="wallet-info">
+            <span id="wallet">Not connected</span>
+            <span id="balance">GLD: -</span>
+          </div>
         </div>
-      </div>
-    </div>
+      </header>
 
-    <!---------------Connect------------>
-
-    <div class="connect" id="connect">
-      <div class="container">
-        <div class="discription">
-          <p>
-            <span><i class="fa-solid fa-triangle-exclamation"></i></span>Before
-            creating new contract you must make sure that the website is
-            connected to MetaMask, by clicking on the 'Connect' button.
-          </p>
+      <section class="grid">
+        <div class="card">
+          <img src="images/cow2.png" />
+          <h3>Cow</h3>
+          <p class="stat">Owned: <span id="cowCount">0</span></p>
+          <p class="stat price">Price: 20 GLD</p>
+          <div class="actions">
+            <button onclick="buyCow()">Buy</button>
+            <button onclick="sellCow()">Sell</button>
+          </div>
         </div>
-        <button class="connect_button">Connect</button>
-      </div>
+        <div class="card">
+          <img src="images/wolf.png" />
+          <h3>Wolf</h3>
+          <p class="stat">Owned: <span id="wolfCount">0</span></p>
+          <p class="stat price">Price: 50 GLD</p>
+          <div class="actions">
+            <button onclick="buyWolf()">Buy</button>
+            <button onclick="sellWolf()">Sell</button>
+          </div>
+        </div>
+        <div class="card">
+          <img src="images/horse.png" />
+          <h3>Horse</h3>
+          <p class="stat">Owned: <span id="horseCount">0</span></p>
+          <p class="stat price">Price: 40 GLD</p>
+          <div class="actions">
+            <button onclick="buyHorse()">Buy</button>
+            <button onclick="sellHorse()">Sell</button>
+          </div>
+        </div>
+        <div class="card">
+          <img src="images/fish.png" />
+          <h3>Fish</h3>
+          <p class="stat">Owned: <span id="fishCount">0</span></p>
+          <p class="stat price">Price: 10 GLD</p>
+          <div class="actions">
+            <button onclick="buyFish()">Buy</button>
+            <button onclick="sellFish()">Sell</button>
+          </div>
+        </div>
+        <div class="card">
+          <img src="images/NicePng_sheep-png_162331.png" />
+          <h3>Cow</h3>
+          <p class="stat">Owned: <span id="cowCount">0</span></p>
+          <p class="stat price">Price: 20 GLD</p>
+          <div class="actions">
+            <button onclick="buyCow()">Buy</button>
+            <button onclick="sellCow()">Sell</button>
+          </div>
+        </div>
+      </section>
     </div>
+  </body>
+</html>

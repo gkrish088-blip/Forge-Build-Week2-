@@ -1,0 +1,142 @@
+body {
+  background: linear-gradient(120deg,#0f2027,#203a43,#2c5364);
+  font-family: Arial, sans-serif;
+  color: white;
+}
+
+header {
+  text-align: center;
+  padding: 25px;
+  background: rgba(0,0,0,0.25);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+header h1 {
+  font-size: 36px;
+  letter-spacing: 1px;
+}
+
+header button {
+  margin-top: 10px;
+}
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background: linear-gradient(90deg, #0f2027, #203a43, #2c5364);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.title {
+  font-size: 42px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-shadow: 0 4px 15px rgba(0,0,0,0.5);
+}
+
+.wallet-panel {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.wallet-info {
+  display: flex;
+  flex-direction: column;
+  font-size: 13px;
+  opacity: 0.85;
+}
+#connectBtn {
+  padding: 10px 22px;
+  border-radius: 12px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  background: linear-gradient(135deg,#a9743a, #6f4a1e);
+  color: white;
+  box-shadow: 0 0 18px rgba(0,0,0,0.3);
+  transition: all 0.25s ease;
+}
+
+#connectBtn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 28px rgba(0,0,0,0.5);
+}
+
+#connectBtn:active {
+  transform: scale(0.95);
+}
+
+
+
+.grid {
+  display: grid ;
+  grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.card {
+  background: linear-gradient(145deg, rgba(255,255,255,0.12), rgba(255,255,255,0.05));
+  border-radius: 18px;
+  padding: 18px;
+  text-align: center;
+  backdrop-filter: blur(12px);
+  transition: all 0.25s ease;
+  border: 1px solid rgba(255,255,255,0.08);
+  min-height: 320px;
+}
+
+.card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.45);
+  border-color: rgba(255,215,0,0.5);
+}
+
+
+.card img {
+  width: 140px;
+  height: 140px;
+  object-fit: contain;
+  margin-bottom: 10px;
+  filter: drop-shadow(0 6px 10px rgba(0,0,0,0.4));
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.actions button {
+  padding: 8px 18px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  background: linear-gradient(135deg, #ffd700, #ffb700);
+  color: #222;
+  transition: all 0.2s ease;
+}
+
+.actions button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 18px rgba(255,215,0,0.5);
+}
+
+.actions button:active {
+  transform: scale(0.95);
+}
+
+.stat {
+  font-size: 14px;
+  opacity: 0.9;
+  margin: 4px 0;
+}
+
+.price {
+  color: gold;
+  font-weight: bold;
+}
