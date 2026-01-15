@@ -16,12 +16,16 @@
   <body>
     <div class="app">
       <header class="topbar">
-        <div class="title"> Ledger Farm</div>
+        <div class="title">Ledger Farm</div>
 
         <div class="wallet-panel">
-          <button id="connectBtn" onclick="connectWallet()">
-            Connect Wallet
-          </button>
+          <button id="connectBtn" class="connectBtn">Connect Wallet</button>
+
+          <form class="connectBtn approve-form">
+            <input type="number" placeholder="Approve More Coins" id="approveValue">
+            <button id="approvalSubmit">Submit</button>
+          </form>
+          <!-- <div class="connectBtn" id="createPlayerBtn" ></div> -->
           <div class="wallet-info">
             <span id="wallet">Not connected</span>
             <span id="balance">GLD: -</span>
@@ -36,8 +40,8 @@
           <p class="stat">Owned: <span id="cowCount">0</span></p>
           <p class="stat price">Price: 20 GLD</p>
           <div class="actions">
-            <button onclick="buyCow()">Buy</button>
-            <button onclick="sellCow()">Sell</button>
+            <button id="buyCow">Buy</button>
+            <button id="sellCow">Sell</button>
           </div>
         </div>
         <div class="card">
@@ -46,8 +50,8 @@
           <p class="stat">Owned: <span id="wolfCount">0</span></p>
           <p class="stat price">Price: 50 GLD</p>
           <div class="actions">
-            <button onclick="buyWolf()">Buy</button>
-            <button onclick="sellWolf()">Sell</button>
+            <button id="buyWolf">Buy</button>
+            <button id="sellWolf">Sell</button>
           </div>
         </div>
         <div class="card">
@@ -56,8 +60,8 @@
           <p class="stat">Owned: <span id="horseCount">0</span></p>
           <p class="stat price">Price: 40 GLD</p>
           <div class="actions">
-            <button onclick="buyHorse()">Buy</button>
-            <button onclick="sellHorse()">Sell</button>
+            <button id="buyHorse">Buy</button>
+            <button id="sellHorse">Sell</button>
           </div>
         </div>
         <div class="card">
@@ -66,18 +70,18 @@
           <p class="stat">Owned: <span id="fishCount">0</span></p>
           <p class="stat price">Price: 10 GLD</p>
           <div class="actions">
-            <button onclick="buyFish()">Buy</button>
-            <button onclick="sellFish()">Sell</button>
+            <button id="buyFish">Buy</button>
+            <button id="sellFish">Sell</button>
           </div>
         </div>
         <div class="card">
           <img src="images/NicePng_sheep-png_162331.png" />
-          <h3>Cow</h3>
-          <p class="stat">Owned: <span id="cowCount">0</span></p>
-          <p class="stat price">Price: 20 GLD</p>
+          <h3>Sheep</h3>
+          <p class="stat">Owned: <span id="sheepCount">0</span></p>
+          <p class="stat price">Price: 15 GLD</p>
           <div class="actions">
-            <button onclick="buyCow()">Buy</button>
-            <button onclick="sellCow()">Sell</button>
+            <button id="buySheep">Buy</button>
+            <button id="sellSheep">Sell</button>
           </div>
         </div>
       </section>

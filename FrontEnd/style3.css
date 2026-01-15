@@ -47,7 +47,7 @@ header button {
   font-size: 13px;
   opacity: 0.85;
 }
-#connectBtn {
+.connectBtn {
   padding: 10px 22px;
   border-radius: 12px;
   border: none;
@@ -59,12 +59,57 @@ header button {
   transition: all 0.25s ease;
 }
 
-#connectBtn:hover {
+.connectBtn:hover {
   transform: scale(1.05);
   box-shadow: 0 0 28px rgba(0,0,0,0.5);
 }
 
-#connectBtn:active {
+.connectBtn:active {
+  transform: scale(0.95);
+}
+.approve-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 6px 12px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #a9743a, #6f4a1e);
+  box-shadow: 0 0 12px rgba(0,0,0,0.35);
+}
+.approve-form input {
+  width: 160px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  font-weight: 600;
+  background: #1c1c1c;
+  color: #ffd966;
+}
+
+
+.approve-form input::placeholder {
+  color: #bbb;
+}
+
+.approve-form button {
+  padding: 6px 6px;
+  border-radius: 8px;
+  border: none;
+  background: linear-gradient(135deg, #ffd000, #ffb700);
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.approve-form button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(255,208,0,0.6);
+}
+
+.approve-form button:active {
   transform: scale(0.95);
 }
 
