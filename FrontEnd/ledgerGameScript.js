@@ -138,7 +138,7 @@ async function PlayerCheck() {
       if (playerExists) {
         refreshpage();
       } else {
-        const tx = writegameContract.createNewPerson("New Person");
+        const tx = await writegameContract.createNewPerson("New Person");
         await tx.wait();
         approve(100);
         refreshpage();
@@ -152,13 +152,16 @@ async function PlayerCheck() {
 
 async function approve(n) {
   const bal = await readtokenContract.balanceOf(address);
-  if(Number(bal)>=n){
-      const tx = await writetokenContract.approve(gamecontractAddress, n);
-  await tx.wait();
-  refreshpage();
-  console.log(await readtokenContract.allowance(address, gamecontractAddress));
-  }else{alert('You dont have enough balance')}
-
+  if (Number(bal) >= n) {
+    const tx = await writetokenContract.approve(gamecontractAddress, n);
+    await tx.wait();
+    refreshpage();
+    console.log(
+      await readtokenContract.allowance(address, gamecontractAddress)
+    );
+  } else {
+    alert("You dont have enough balance");
+  }
 }
 buyCowBtn.addEventListener("click", async function () {
   if (approvedBalance >= 20) {
@@ -205,58 +208,76 @@ buyFishBtn.addEventListener("click", async function () {
     alert("You dont have enough coins");
   }
 });
-sellCowBtn.addEventListener("click",async ()=>{
-    const p = await readgameContract.addressToPerson(address)
+sellCowBtn.addEventListener("click", async () => {
+  const p = await readgameContract.addressToPerson(address);
   const ownedCow = Number(p[1]);
-  if(ownedCow>0){
-      const tx = await writegameContract.sellCow();
-  await tx.wait();
-  refreshpage();
-  }else{alert("You dont have enough cows")}
-})
-sellHorseBtn.addEventListener('click',async function(){
-    const p = await readgameContract.addressToPerson(address)
+  if (ownedCow > 0) {
+    const tx = await writegameContract.sellCow();
+    await tx.wait();
+    refreshpage();
+  } else {
+    alert("You dont have enough cows");
+  }
+});
+sellHorseBtn.addEventListener("click", async function () {
+  const p = await readgameContract.addressToPerson(address);
   const ownedHorse = Number(p[4]);
-  if(ownedHorse>0){
-      const tx = await writegameContract.sellHorse();
-  await tx.wait();
-  refreshpage();
-  }else{alert("You dont have enough horses")}
-
-})
-sellSheepBtn.addEventListener('click',async function(){
-    const p = await readgameContract.addressToPerson(address)
+  if (ownedHorse > 0) {
+    const tx = await writegameContract.sellHorse();
+    await tx.wait();
+    refreshpage();
+  } else {
+    alert("You dont have enough horses");
+  }
+});
+sellSheepBtn.addEventListener("click", async function () {
+  const p = await readgameContract.addressToPerson(address);
   const ownedSheep = Number(p[2]);
-  if(ownedSheep>0){
-      const tx = await writegameContract.sellSheep();
-  await tx.wait();
-  refreshpage();
-  }else{alert("You dont have enough Sheeps")}
-
-})
-sellWolfBtn.addEventListener('click',async function(){
-    const p = await readgameContract.addressToPerson(address)
+  if (ownedSheep > 0) {
+    const tx = await writegameContract.sellSheep();
+    await tx.wait();
+    refreshpage();
+  } else {
+    alert("You dont have enough Sheeps");
+  }
+});
+sellWolfBtn.addEventListener("click", async function () {
+  const p = await readgameContract.addressToPerson(address);
   const ownedwolf = Number(p[3]);
-  if(ownedwolf>0){
-      const tx = await writegameContract.sellWolf();
-  await tx.wait();
-  refreshpage();
-  }else{alert("You dont have enough Wolves")}
-
-})
-sellFishBtn.addEventListener('click',async function(){
-  const p = await readgameContract.addressToPerson(address)
+  if (ownedwolf > 0) {
+    const tx = await writegameContract.sellWolf();
+    await tx.wait();
+    refreshpage();
+  } else {
+    alert("You dont have enough Wolves");
+  }
+});
+sellFishBtn.addEventListener("click", async function () {
+  const p = await readgameContract.addressToPerson(address);
   const ownedFish = Number(p[5]);
-  console.log(ownedFish)
-  if(ownedFish>0){
+  console.log(ownedFish);
+  if (ownedFish > 0) {
     const tx = await writegameContract.sellFish();
     await tx.wait();
     refreshpage();
-  }else{alert("You dont have enough Fishes")}
-})
-approveForm.addEventListener('submit',async function(e){
-  e.preventDefault();
-  const input =document.querySelector('#approveValue')
-  const value = Number(input.value)
-  approve(value)
-})
+  } else {
+    alert("You dont have enough Fishes");
+  }
+});
+approveForm.addEventListener("submit", async function (e) {
+  if (metaMaskConected == true) {
+    e.preventDefault();
+    const input = document.querySelector("#approveValue");
+    const val = Number(input.value);
+
+    if (isNaN(val) || val <= 0) {
+      alert("Enter a valid amount");
+      return;
+    } else {
+      approve(val);
+      input.value ="";
+    }
+  } else {
+    alert("Metamask not Connected");
+  }
+});
